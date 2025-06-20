@@ -14,13 +14,13 @@ export default function Login() {
   } = useForm<AuthCredentials>();
 
   const [showPassword, setShowPassword] = useState(false);
-  const setToken = useAuthStore((state) => state.setToken);
+  const setAuth = useAuthStore((state) => state.setAuth);
   const navigate = useNavigate();
 
   const onSubmit = async (data: AuthCredentials) => {
     try {
       const res = await login(data);
-      setToken(res.token);
+      setAuth(res.token, res.user);
       navigate("/perfil");
     } catch (err) {
       console.error("Login error:", err);

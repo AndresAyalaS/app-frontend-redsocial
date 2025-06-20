@@ -1,20 +1,24 @@
-import { create } from 'zustand';
-// import jwtDecode from 'jwt-decode';
+import { create } from "zustand";
+import { User } from "../types/User";
 
 interface AuthState {
   token: string | null;
-  setToken: (token: string) => void;
-  logout: () => void;
+  user: User | null;
+  setAuth: (token: string, user: User) => void;
+  clearAuth: () => void;
 }
 
 export const useAuthStore = create<AuthState>((set) => ({
-  token: localStorage.getItem('token'),
-  setToken: (token) => {
-    localStorage.setItem('token', token);
-    set({ token });
+  token: localStorage.getItem("token"),
+  user: JSON.parse(localStorage.getItem("user") || "null"),
+  setAuth: (token, user) => {
+    localStorage.setItem("token", token);
+    localStorage.setItem("user", JSON.stringify(user));
+    set({ token, user });
   },
-  logout: () => {
-    localStorage.removeItem('token');
-    set({ token: null });
+  clearAuth: () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    set({ token: null, user: null });
   },
 }));
