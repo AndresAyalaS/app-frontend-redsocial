@@ -46,12 +46,13 @@ export default function Login() {
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
           {/* Email */}
           <div>
-            <label className="text-blue-200 text-sm font-medium block mb-1">
+            <label htmlFor="email" className="text-blue-200 text-sm font-medium block mb-1">
               Correo Electrónico
             </label>
             <div className="relative">
               <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-300" />
               <input
+                id="email"
                 {...register("email", {
                   required: "El correo es requerido",
                   pattern: {
@@ -75,12 +76,13 @@ export default function Login() {
 
           {/* Contraseña */}
           <div>
-            <label className="text-blue-200 text-sm font-medium block mb-1">
+            <label htmlFor="password" className="text-blue-200 text-sm font-medium block mb-1">
               Contraseña
             </label>
             <div className="relative">
               <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-300" />
               <input
+                id="password"
                 {...register("password", {
                   required: "La contraseña es requerida",
                   minLength: {

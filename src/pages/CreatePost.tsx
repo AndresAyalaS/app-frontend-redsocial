@@ -37,8 +37,9 @@ export default function CreatePost() {
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div>
-            <label className="block text-blue-200 mb-1">Mensaje</label>
+            <label htmlFor="message" className="block text-blue-200 mb-1">Mensaje</label>
             <textarea
+              id="message"
               {...register("message", {
                 required: "El mensaje es requerido",
                 minLength: {
