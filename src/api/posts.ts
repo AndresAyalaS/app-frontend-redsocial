@@ -4,12 +4,10 @@ import type { PostFormData } from "../types/Post";
 
 const API_URL = import.meta.env.VITE_POST_URL || "http://localhost:3002/api/posts";
 
-// Instancia de axios con el token desde Zustand
 const api = axios.create({
   baseURL: API_URL,
 });
 
-// Interceptor para agregar el token en cada request
 api.interceptors.request.use((config) => {
   const token = useAuthStore.getState().token;
   if (token) {
@@ -33,5 +31,11 @@ export const likePost = async (postId: string) => {
 // Crear un nuevo post
 export const createPost = async (data: PostFormData) => {
   const res = await api.post("/", data);
+  return res.data;
+};
+
+// Obtener post del usuario autenticado
+export const getUserPosts = async (userId: string) => {
+  const res = await api.get(`/user/${userId}`);
   return res.data;
 };
