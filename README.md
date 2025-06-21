@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# 🌐 Frontend - Red Social (Periferia IT)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto es el frontend de una red social construida como parte de una prueba técnica. Está desarrollado con **React**, **TypeScript**, **Tailwind CSS**, **React Hook Form**, y **Zustand**. El sistema se comunica con un backend basado en microservicios mediante API REST con autenticación por **JWT**.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🛠️ Tecnologías utilizadas
 
-### `npm start`
+- **React 18** con **TypeScript**
+- **Tailwind CSS** para estilos modernos y responsivos
+- **React Router Dom** para navegación entre vistas
+- **React Hook Form** para validación de formularios
+- **Zustand** para manejo global de estado
+- **Vitest** y **@testing-library/react** para pruebas unitarias
+- **Axios** para llamadas HTTP
+- **Lucide React** para iconos SVG
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Funcionalidades implementadas
 
-### `npm test`
+### ✅ Autenticación
+- Registro de usuarios
+- Login con validaciones
+- Guardado de sesión con JWT
+- Redirección automática si el usuario ya está autenticado
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 👤 Perfil
+- Visualización de información básica del usuario
 
-### `npm run build`
+### 📝 Publicaciones
+- Crear publicaciones con validación (mínimo 5 caracteres)
+- Listar publicaciones
+- Dar "like" a publicaciones
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🧪 Pruebas
+- Pruebas unitarias para:
+  - Formulario de Login
+  - Formulario de Crear publicación
+- Reporte de cobertura con Vitest
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📂 Estructura de carpetas
 
-### `npm run eject`
+src/
+├── api/ # Llamadas a la API REST (auth, posts)
+├── components/ # Componentes reutilizables (Header, Input, Button)
+├── pages/ # Vistas principales (Login, Register, Profile, Posts, CreatePost)
+├── store/ # Estado global (Zustand)
+├── routes/ # Rutas protegidas y públicas
+├── types/ # Tipos de datos globales (User, Post)
+├── App.tsx # Rutas generales
+└── main.tsx # Entrada principal
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Instalación y ejecución
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Instalar dependencias
 
-## Learn More
+npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Ejecutar en desarrollo
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+npm run dev
 
-### Code Splitting
+La app estará disponible en http://localhost:5173
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+# Ejecutar pruebas
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+npx vitest run
 
-### Making a Progressive Web App
+## Ver cobertura
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+npx vitest run --coverage
 
-### Advanced Configuration
+#  Estilos
+Este proyecto utiliza Tailwind CSS con una configuración personalizada y efectos modernos de interfaz como glassmorphism, gradientes y transiciones suaves.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#  Autor
+Desarrollado por Andrés Ayala
